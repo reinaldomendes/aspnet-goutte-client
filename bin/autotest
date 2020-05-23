@@ -1,0 +1,46 @@
+#!/bin/bash
+
+allTestsOkIcon=/usr/share/icons/Humanity/actions/48/gtk-yes.svg
+allTestsOkTitle="All tests passed"
+allTestsOkMessage="Arr! Ye rock mate!"
+
+allTestsWarnIcon=/usr/share/icons/Adwaita/48x48/status/dialog-warning.png
+allTestsWarnTitle="OK, but incomplete, skipped, or risky tests!"
+allTestsWarnMessage="Please check!"
+
+
+someTestsFailedIcon=/usr/share/icons/Humanity/actions/48/gtk-cancel.svg
+someTestsFailedTitle="Some tests failed"
+someTestsFailedMessage="Avast! Ye broke sumthin'!"
+
+phpunitConfigPath=$1
+folderBeingWatched="${@:2}"
+
+
+runTests(){
+	local out=$(phpunit -c $phpunitConfigPath);
+	local isOk=$(echo $out | grep 'assertion' | grep "OK");
+	local  isWarn=$(echo $out | grep 'but incomplete' |  grep "OK") ;                
+	if [ ! -z  "$isWarn" ]; then
+		notify-send --hint=int:transient:1 --icon=$allTestsWarnIcon "$allTestsWarnTitle" "$allTestsWarnMessage" --expire-time=1500
+	elif [ ! -z "$isOk" ] ; then
+		notify-send --hint=int:transient:1 --icon=$allTestsOkIcon "$allTestsOkTitle" "$allTestsOkMessage" --expire-time=1500	
+	else
+		notify-send --hint=int:transient:1 --icon=$someTestsFailedIcon "$someTestsFailedTitle" "$someTestsFailedMessage" --expire-time=1500
+	fi
+}
+
+
+if [ ! -z "$folderBeingWatched" ]; then
+
+	if [ -z $phpunitConfigPath ]; then
+		phpunitConfigPath=app/
+	fi
+
+	while [ true ]; do
+		runTests
+		inotifywait -qq -e modify $folderBeingWatched -r
+	done
+else
+	echo "USAGE: PHPAutotest phpUnitConfigPath folders[@] "
+fi

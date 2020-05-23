@@ -1,0 +1,29 @@
+{
+    "name": "reinaldo/aspnet-goutte-client",
+    "description": "Asp.net forms wrapper for goutte client",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Reinaldo Mendes",
+            "email": "reinaldorock@yahoo.com.br"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "guzzlehttp/guzzle": "^6.5",
+        "illuminate/container": "^7.11",
+        "fabpot/goutte": "^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "files" : [
+            "bootstrap.php"
+        ],
+        "psr-4": {
+            "B3\\": "src/B3"
+        }
+        
+    }
+}

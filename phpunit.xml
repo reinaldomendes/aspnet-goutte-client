@@ -1,0 +1,33 @@
+<phpunit
+  colors="true"
+  verbose="true"
+  bootstrap="tests/bootstrap.php">
+  <testsuites>
+    <testsuite name="B3 - Scrapper - Test Suite">
+        <directory>tests</directory>        
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="APP_ENV" value="test"/>
+  </php>
+
+  <filter>
+    <whitelist>
+      <directory>src/B3</directory>
+    </whitelist>
+  </filter>
+  
+  <logging>
+    <log type="coverage-html" target="tests/_reports/report" 
+     lowUpperBound="35" highLowerBound="70"/>
+    <log type="coverage-clover" target="tests/_reports/coverage.xml"/>
+    <log type="coverage-php" target="tests/_reports/coverage.serialized"/>
+    <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+    <log type="json" target="tests/_reports/logfile.json"/>
+    <log type="tap" target="tests/_reports/logfile.tap"/>
+    <log type="junit" target="tests/_reports/logfile.xml" />
+    <!-- <log type="testdox-html" target="tests/_reports/testdox.html"/> -->
+    <log type="testdox-text" target="tests/_reports/testdox.txt"/>
+  </logging>
+
+</phpunit>
