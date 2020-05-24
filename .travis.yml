@@ -1,0 +1,15 @@
+language: php
+php:     
+  - '7.2'
+  - '7.3'
+  - '7.4'
+  # - hhvm # on Trusty only
+  # - nightly
+before_install:
+  composer require php-coveralls/php-coveralls '^2.0'
+install:
+  - composer install --no-interaction
+script:
+  - ./vendor/bin/phpunit --coverage-clover ./tests/logs/clover.xml
+after_success:
+  - travis_retry ./vendor/bin/php-coveralls -v
