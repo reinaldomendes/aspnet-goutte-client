@@ -18,8 +18,8 @@
         "phpunit/phpunit": "^8.5"
     },
     "autoload": {
-        "files" : [
-            "bootstrap.php"
+        "files" : [            
+            "init/di.php"
         ],
         "psr-4": {
             "B3\\": "src/B3"
