@@ -1,7 +1,7 @@
 <?php
-namespace B3\Crawler\Decorator;
+namespace Wscr\Crawler\Decorator;
 use Symfony\Component\DomCrawler\Form as Subject;
-use B3\Decorator\AbstractDecorator;
+use Wscr\Decorator\AbstractDecorator;
 use \DOMElement;
 use Symfony\Component\DomCrawler\Field\{
     InputFormField,
@@ -12,7 +12,7 @@ use Symfony\Component\DomCrawler\Field\{
 };
 
 use Illuminate\Container\Container;
-use B3\Decorator\Pool;
+use Wscr\Decorator\Pool;
 
 class Form extends UriElement
 {
@@ -21,7 +21,7 @@ class Form extends UriElement
      * 
      *
      * @param \Illuminate\Container\Container $app
-     * @param \B3\Decorator\Pool $pool
+     * @param \Wscr\Decorator\Pool $pool
      * @param \Symfony\Component\DomCrawler\Form $subject
      */
     public function __construct(

@@ -1,5 +1,5 @@
 <?php
-namespace B3\Decorator;
+namespace Wscr\Decorator;
 
 class Pool
 {

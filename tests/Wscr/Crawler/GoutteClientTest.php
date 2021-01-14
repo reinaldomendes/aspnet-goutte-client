@@ -1,12 +1,12 @@
 <?php
-namespace B3\Crawler;
+namespace Wscr\Crawler;
 use PHPUnit\Framework\TestCase;
 
 use Symfony\Contracts\HttpClient\{
     HttpClientInterface,
     ResponseInterface
 };
-use B3\Decorator\DecoratorInterface;
+use Wscr\Decorator\DecoratorInterface;
 /**
  * Scrapper test case.
  *

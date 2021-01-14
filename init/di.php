@@ -6,9 +6,9 @@ $app -> singleton(Illuminate\Container\Container::class, function() use($app){
     return $app;
 });
 
-$app -> singleton(B3\Decorator\Pool::class);
+$app -> singleton(Wscr\Decorator\Pool::class);
 
-$app -> when(B3\Crawler\GoutteClient::class)
+$app -> when(Wscr\Crawler\GoutteClient::class)
      -> needs('$subject')
      -> give(function($app){
         // $goutteOptions =  [
@@ -30,9 +30,9 @@ $app -> when(B3\Crawler\GoutteClient::class)
 
 
 
-// $app -> when(B3\Decorator\AbstractDecorator::class)
-//      -> needs(B3\Decorator\Pool::class)
-//      -> give($app->make(B3\Decorator\Pool::class));
+// $app -> when(Wscr\Decorator\AbstractDecorator::class)
+//      -> needs(Wscr\Decorator\Pool::class)
+//      -> give($app->make(Wscr\Decorator\Pool::class));
 
 
 

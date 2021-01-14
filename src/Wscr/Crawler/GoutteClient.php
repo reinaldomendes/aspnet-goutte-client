@@ -1,10 +1,10 @@
 <?php
-namespace B3\Crawler;
+namespace Wscr\Crawler;
 
 use Goutte\Client as HttpClient;
 // use Symfony\Component\DomCrawler\Form;
 use Symfony\Component\DomCrawler\Crawler;
-use B3\Decorator\{
+use Wscr\Decorator\{
     AbstractDecorator,
     DecoratorInterface,
     Pool
@@ -20,7 +20,7 @@ class GoutteClient extends AbstractDecorator
     protected function decorate($result){
         if($result instanceof Crawler)
         {            
-            $result = $this->app->make(\B3\Crawler\Decorator\Crawler::class, ['subject' => $result]);            
+            $result = $this->app->make(\Wscr\Crawler\Decorator\Crawler::class, ['subject' => $result]);            
         }
         return $result;
     }

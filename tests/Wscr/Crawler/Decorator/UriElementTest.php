@@ -1,6 +1,6 @@
 <?php
 
-namespace B3\Crawler\Decorator;
+namespace Wscr\Crawler\Decorator;
 use PHPUnit\Framework\TestCase;
 
 /**

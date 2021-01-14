@@ -1,7 +1,7 @@
 <?php
-namespace B3\Decorator;
-use \B3\Decorator\Pool;
-use \B3\Decorator\DecoratorInterface;
+namespace Wscr\Decorator;
+use \Wscr\Decorator\Pool;
+use \Wscr\Decorator\DecoratorInterface;
 
 use PHPUnit\Framework\TestCase;
 

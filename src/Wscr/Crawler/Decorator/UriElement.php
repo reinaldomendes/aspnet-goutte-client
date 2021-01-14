@@ -1,13 +1,13 @@
 <?php
-namespace B3\Crawler\Decorator;
+namespace Wscr\Crawler\Decorator;
 use Symfony\Component\DomCrawler\AbstractUriElement as Subject;
 use Symfony\Component\DomCrawler\Form as FormCrawler;
-use B3\Decorator\AbstractDecorator;
+use Wscr\Decorator\AbstractDecorator;
 // use Form as FormDecorator;
 use \DOMElement;
 
 use Illuminate\Container\Container;
-use B3\Decorator\Pool;
+use Wscr\Decorator\Pool;
 
 
 class UriElement extends AbstractDecorator
@@ -16,7 +16,7 @@ class UriElement extends AbstractDecorator
      * 
      *
      * @param \Illuminate\Container\Container $app
-     * @param \B3\Decorator\Pool $pool
+     * @param \Wscr\Decorator\Pool $pool
      * @param \Symfony\Component\DomCrawler\AbstractUriElement $subject
      */
     public function __construct(

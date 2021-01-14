@@ -5,7 +5,7 @@
     "authors": [
         {
             "name": "Reinaldo Mendes",
-            "email": "reinaldorock@yahoo.com.br"
+            "email": "reinaldorock@gmail.com"
         }
     ],
     "minimum-stability": "stable",
@@ -22,7 +22,7 @@
             "init/di.php"
         ],
         "psr-4": {
-            "B3\\": "src/B3"
+            "Wscr\\": "src/Wscr"
         }
         
     }

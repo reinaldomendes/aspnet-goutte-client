@@ -1,5 +1,5 @@
 <?php
-namespace B3\Decorator;
+namespace Wscr\Decorator;
 use PHPUnit\Framework\TestCase;
 class _HACK_Subject extends \StdClass
 {
