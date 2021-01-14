@@ -18,7 +18,7 @@ folderBeingWatched="${@:2}"
 
 
 runTests(){
-	local out=$(phpunit -c $phpunitConfigPath);
+	local out=$(XDEBUG_MODE=coverage phpunit -c $phpunitConfigPath);
 	local isOk=$(echo $out | grep 'assertion' | grep "OK");
 	local  isWarn=$(echo $out | grep 'but incomplete' |  grep "OK") ;                
 	if [ ! -z  "$isWarn" ]; then

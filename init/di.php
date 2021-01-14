@@ -1,6 +1,10 @@
 <?php
-use Illuminate\Container\Container;
-$app = new Container();
+
+
+
+
+
+$app = di();
 
 $app -> singleton(Illuminate\Container\Container::class, function() use($app){
     return $app;

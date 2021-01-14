@@ -11,13 +11,7 @@ define('FIXTURES_DIR' , TEST_DIR . '/fixtures');
 
 
 
-use Illuminate\Container\Container;
-function di()
-{
-    static $di = null;
-    $di = $di ? $di: new Container();
-    return $di;
-}
+
 
 
     

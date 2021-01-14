@@ -19,6 +19,7 @@
     },
     "autoload": {
         "files" : [            
+            "init/functions.php",
             "init/di.php"
         ],
         "psr-4": {
